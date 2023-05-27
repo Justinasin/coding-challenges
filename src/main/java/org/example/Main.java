@@ -1,9 +1,7 @@
 package org.example;
 
-import java.io.File;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Main {
 
@@ -66,9 +64,35 @@ public class Main {
         System.out.println(drawSquare.temp());
 
         // Compare files
+        // CompareFiles compareFiles = new CompareFiles();
+        // compareFiles.parseDirectory("C:\\filestocompare");
 
-        CompareFiles compareFiles = new CompareFiles();
-        compareFiles.parseDirectory("C:\\filestocompare");
+        // Sort and rename files
+        // SortAndRenameFiles sortAndRenameFiles = new SortAndRenameFiles();
+        // sortAndRenameFiles.sortAndRenameFilesInDirectory("C:\\filestocompare");
+
+        //Reverse String
+        String reversedString = ReverseString.reverseString("LABA DIENA");
+        System.out.println(reversedString);
+
+        // Remove duplicates from array
+        List<String> strings = new ArrayList<>();
+        strings.add("String1");
+        strings.add("String2");
+        strings.add("String2");
+        strings.add("String1");
+        strings.add("String3");
+        strings.add("String4");
+        strings.add("String4");
+        strings.add("String5");
+        strings.add("String1");
+        DuplicatesInArray.removeDuplicatesFromArray(strings);
+        for (String str : strings) {
+            System.out.println(str);
+        }
+
+        // Learn Queue
+        LearnQueue.learnQueue();
 
     }
 

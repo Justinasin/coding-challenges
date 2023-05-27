@@ -75,24 +75,33 @@ public class CompareFiles {
 
     private void listDuplicateFiles(Map<String, List<File>> filesList, String directory) {
         System.out.printf("Duplicate files in directory: %s%n", directory);
+        int fileCount = 0;
 
         for (List<File> list : filesList.values()) {
+            fileCount = fileCount + list.size();
             if (list.size() > 1) {
                 for (File file : list) {
                     System.out.println(file.getAbsolutePath());
                 }
             }
         }
+
+        System.out.printf("Found %s%n duplicated files", fileCount);
     }
 
     private void deleteDuplicateFiles(Map<String, List<File>> filesList) {
+        int fileCount = 0;
+
         for (List<File> list : filesList.values()) {
+            fileCount = fileCount + list.size();
             if (list.size() > 1) {
                 for (int i = 1; i < list.size(); i++) {
                     deleteFile(list.get(i));
                 }
             }
         }
+
+        System.out.printf("Deleted %s%n duplicated files", fileCount);
     }
 
     private void deleteFile(File file) {
